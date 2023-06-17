@@ -1,6 +1,10 @@
-require('tokyonight').setup{
-    style = 'storm',
-    dim_inactive = true
-}
+require("tokyonight").setup({
+	style = "moon",
+	dim_inactive = true,
+})
 
-vim.cmd("colorscheme tokyonight-storm")
+require("catppuccin").setup()
+require("kanagawa").setup()
+-- vim.cmd("colorscheme tokyonight-moon")
+-- vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme kanagawa")

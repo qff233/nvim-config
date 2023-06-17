@@ -15,6 +15,8 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("folke/tokyonight.nvim") -- colorscheme
+	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("rebelot/kanagawa.nvim")
 	use("tpope/vim-surround")
 	use("christoomey/vim-tmux-navigator")
 	use("nvim-tree/nvim-web-devicons")
