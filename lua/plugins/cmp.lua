@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local cmp_git = require("cmp_git")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 
@@ -26,6 +27,7 @@ cmp.setup({
 		{ name = "luasnip" }, -- snippets
 		{ name = "buffer" }, -- text within current buffer
 		{ name = "path" }, -- file system paths
+		{ name = "git" },
 	}),
 	formatting = {
 		format = lspkind.cmp_format({
@@ -34,3 +36,5 @@ cmp.setup({
 		}),
 	},
 })
+
+cmp_git.setup()
