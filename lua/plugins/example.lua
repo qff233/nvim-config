@@ -11,12 +11,12 @@ if true then return {} end
 return {
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
-  { "qff233/nvim-base16" },
+
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "base16-tender",
+      colorscheme = "gruvbox",
     },
   },
 
