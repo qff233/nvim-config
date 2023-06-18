@@ -1,13 +1,4 @@
-# Neovim 配置
+# 💤 LazyVim
 
-| 快捷键 |        功能        |
-| :----- | :----------------: |
-| gr     | 查询函数被哪里引用 |
-| gD     |  跳转到函数的声明  |
-| gd     | 弹出函数的声明小窗 |
-| gi     |  跳转到函数的实现  |
-| <>ca   |   查看活跃的代码   |
-| <>rn   |       重命名       |
-| K      |   查看函数的注释   |
-| <>o    |    显示文件结构    |
-| <>tt   |     打开控制台     |
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.

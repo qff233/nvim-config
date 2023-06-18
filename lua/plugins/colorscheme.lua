@@ -1,10 +1,5 @@
-require("tokyonight").setup({
-	style = "moon",
-	dim_inactive = true,
-})
+return {
 
-require("catppuccin").setup()
-require("kanagawa").setup()
--- vim.cmd("colorscheme tokyonight-moon")
--- vim.cmd("colorscheme catppuccin")
-vim.cmd("colorscheme kanagawa")
+  { "qff233/nvim-base16" },
+  { "LazyVim/LazyVim", opts = { colorscheme = "base16-tender" } },
+}
