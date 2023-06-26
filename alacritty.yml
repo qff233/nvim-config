@@ -1,0 +1,16 @@
+import:
+  - ~/.config/alacritty/fonts.yml
+
+live_config_reload: true
+
+window:
+  dimensions:
+    columns: 145
+    lines: 40
+
+  padding:
+    x: 10
+    y: 10
+
+  decorations: None
+  opacity: 0.9
