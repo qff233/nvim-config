@@ -38,16 +38,6 @@ M.gitsigns = {
     },
 }
 
-M.lualine = {
-    theme = "everforest"
-}
-
-M.transparent = {
-    extra_groups = {
-        "NvimTreeNormal",
-    }
-}
-
 M.bufferline = {
     options = {
         diagnostics = "nvim_lsp",
@@ -65,7 +55,6 @@ M.bufferline = {
 
 M.indent_blankline = {
     show_current_context = true,
-    show_current_context_start = true,
 }
 
 return M

@@ -8,7 +8,7 @@ keymap.set("i", "<c-k>", "<Up>")
 keymap.set("i", "<c-l>", "<Right>")
 
 keymap.set("n", "<leader>q", "<cmd> q <cr>")
-keymap.set("n", "<leader>w", "<cmd> w <cr>")
+keymap.set("n", "<leader>ww", "<cmd> w <cr>")
 keymap.set("n", "<leader>wq", "<cmd> wq <cr>")
 keymap.set("n", "<Esc>", "<cmd> noh <cr>")
 
