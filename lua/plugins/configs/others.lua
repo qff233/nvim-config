@@ -29,8 +29,8 @@ end
 
 M.gitsigns = {
     signs = {
-        add = { text = "│" },
-        change = { text = "│" },
+        add = { text = "+" },
+        change = { text = "~" },
         delete = { text = "󰍵" },
         topdelete = { text = "‾" },
         changedelete = { text = "~" },
@@ -44,7 +44,21 @@ M.lualine = {
 
 M.transparent = {
     extra_groups = {
-        "NvimTreeNormal"
+        "NvimTreeNormal",
+    }
+}
+
+M.bufferline = {
+    options = {
+        diagnostics = "nvim_lsp",
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "File Explorer",
+                highlight = "Directory",
+                separator = true
+            }
+        }
     }
 }
 
