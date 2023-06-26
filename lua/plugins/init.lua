@@ -4,6 +4,12 @@ return {
     "nvim-tree/nvim-web-devicons",
     "christoomey/vim-tmux-navigator",
     "sainnhe/everforest",
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        opts = function()
+            return require "plugins.configs.others".indent_blankline
+        end
+    },
 
     {
         "nvim-treesitter/nvim-treesitter",

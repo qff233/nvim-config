@@ -58,8 +58,14 @@ M.bufferline = {
                 highlight = "Directory",
                 separator = true
             }
-        }
-    }
+        },
+        always_show_bufferline = false
+    },
+}
+
+M.indent_blankline = {
+    show_current_context = true,
+    show_current_context_start = true,
 }
 
 return M
