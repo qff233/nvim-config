@@ -6,6 +6,11 @@ return {
 	"christoomey/vim-tmux-navigator",
 	"stevearc/dressing.nvim",
 	"SmiteshP/nvim-navic",
+
+	{
+		"NvChad/nvterm",
+		config = true,
+	},
 	{
 		"j-hui/fidget.nvim",
 		requires = { "neovim/nvim-lspconfig" },
