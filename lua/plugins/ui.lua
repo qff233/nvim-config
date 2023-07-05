@@ -20,13 +20,6 @@ return {
 	},
 
 	{
-		"xiyaowong/transparent.nvim",
-		opts = function()
-			return require("plugins.configs.ui").transparent
-		end,
-	},
-
-	{
 		"nvim-lualine/lualine.nvim",
 		opts = function()
 			return require("plugins.configs.ui").lualine
