@@ -1,24 +1,30 @@
-local opt = vim.opt
+local opt = {
+    number = true,
 
-opt.number = true
+    tabstop = 4,
+    shiftwidth = 4,
+    expandtab = true,
+    autoindent = true,
 
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.expandtab = true
-opt.autoindent = true
-opt.scrolloff = 15
+    scrolloff = 15,
+    cursorline = true,
+    wrap = false,
+    clipboard = function(clip) clip:append("unnamedplus") end,
 
-opt.cursorline = true
+    splitright = true,
+    splitbelow = true,
 
-opt.wrap = false
+    ignorecase = true,
+    smartcase = true,
 
-opt.clipboard:append("unnamedplus")
+    termguicolors = true,
+    signcolumn = "yes",
+}
 
-opt.splitright = true
-opt.splitbelow = true
-
-opt.ignorecase = true
-opt.smartcase = true
-
-opt.termguicolors = true
-opt.signcolumn = "yes"
+for key, value in pairs(opt) do
+    if type(value) == "function" then
+        value(vim.opt[key])
+    else
+        vim.opt[key] = value
+    end
+end
