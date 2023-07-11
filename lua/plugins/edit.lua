@@ -1,11 +1,4 @@
 return {
-    {
-        "kylechui/nvim-surround",
-        lazy = true,
-        keys = {"cs", "ds", "ys"},
-        config = true
-    },
-
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		opts = function()

@@ -1,3 +1,5 @@
+local M = {}
+
 vim.g.mapleader = " "
 local keymap = {
     {from = "<c-h>", to = "<Left>", mode = "i"},
@@ -30,15 +32,26 @@ local keymap = {
     {from = "H", to = "<cmd> bprevious <cr>"},
     {from = "L", to = "<cmd> bnext<cr>"},
     {from = "X", to = "<cmd> bdel <cr> <cmd> bnext <cr>"},
-
-    -- terminal
-    {from = "<A-h>", to = function() require("nvterm.terminal").toggle("horizontal") end},
-    {from = "<A-v>", to = function() require("nvterm.terminal").toggle("vertical") end},
-    {from = "<C-x>", to = "<C-\\><C-N>", mode = "t"},
 }
+
+M.lsp_keymaps = {
+    {from = "gD", to = vim.lsp.buf.declaration},
+    {from = "gd", to =  "<cmd>Lspsaga peek_definition<cr>"},
+    {from = "K", to = "<cmd>Lspsaga hover_doc<cr>"},
+    {from = "gi", to = vim.lsp.buf.implementation},
+    {from = "<C-k>", to = vim.lsp.buf.signature_help},
+    {from = "<leader>D", to =  "<cmd>Lspsaga show_line_diagnositcs<cr>"},
+    {from = "<leader>rn", to =  "<cmd>Lspsaga rename<cr>"},
+    {from = "<leader>ca", to =  "<cmd>Lspsaga code_action<cr>"},
+    {from = "gr", to =  "<cmd>Lspsaga lsp_finder<cr>"},
+    {from = "[d", to =  "<cmd>Lspsaga diagnostic_jump_prev<cr>"},
+    {from = "]d", to =  "<cmd>Lspsaga diagnostic_jump_next<cr>"},
+}
+
 
 for i=1,#keymap do
     local config = keymap[i]
     vim.keymap.set(config.mode or "n", config.from, config.to)
 end
 
+return M

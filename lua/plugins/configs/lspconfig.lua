@@ -1,20 +1,11 @@
 local M = {}
 
 M.on_attach = function(client, bufnr)
-	-- client.server_capabilities.documentFormattingProvider = false
-	-- client.server_capabilities.documentRangeFormattingProvider = false
-	local opts = { noremap = true, silent = true, buffer = bufnr }
-	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-	vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<cr>", opts)
-	vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
-	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-	vim.keymap.set("n", "<space>D", "<cmd>Lspsaga show_line_diagnositcs<cr>", opts)
-	vim.keymap.set("n", "<space>rn", "<cmd>Lspsaga rename<cr>", opts)
-	vim.keymap.set("n", "<space>ca", "<cmd>Lspsaga code_action<cr>", opts)
-	vim.keymap.set("n", "gr", "<cmd>Lspsaga lsp_finder<cr>", opts)
-	vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<cr>")
-	vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<cr>")
+	local opts = { noremap = false, buffer = bufnr }
+    local keymap = require("keymaps").lsp_keymaps
+    for i=1,#keymap do
+        vim.keymap.set("n", keymap[i].from, keymap[i].to, opts)
+    end
 	vim.api.nvim_create_autocmd("BufWritePre", {
 		group = vim.api.nvim_create_augroup("LspFormatting", { clear = true }),
 		buffer = bufnr,
@@ -69,6 +60,34 @@ lspconfig.lua_ls.setup({
 			},
 		},
 	},
+})
+
+vim.g.everforest_diagnostic_line_highlight = 1
+vim.fn.sign_define({
+    {
+        name = "DiagnosticSignError",
+        text = "E",
+        texthl = "DiagnosticSignError",
+        linehl = "ErrorLine"
+    },
+    {
+        name = "DiagnosticSignWarn",
+        text = "W",
+        texthl = "DiagnosticSignWarn",
+        linehl = "WarningLine"
+    },
+    {
+        name = "DiagnosticSignInfo",
+        text = "I",
+        texthl = "DiagnosticSignInfo",
+        linehl = "InfoLine"
+    },
+    {
+        name = "DiagnosticSignHint",
+        text = "H",
+        texthl = "DiagnosticSignHint",
+        linehl = "HintLine"
+    }
 })
 
 local util = require("lspconfig.util")
