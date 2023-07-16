@@ -2,10 +2,10 @@ local M = {}
 
 vim.g.mapleader = " "
 local keymap = {
-    { from = "<c-h>",       to = "<Left>",                                 mode = "i" },
-    { from = "<c-i>",       to = "<Down>",                                 mode = "i" },
-    { from = "<c-k>",       to = "<Up>",                                   mode = "i" },
-    { from = "<c-l>",       to = "<Right>",                                mode = "i" },
+    { from = "<c-h>",       to = "<Left>",                                        mode = "i" },
+    { from = "<c-j>",       to = "<Down>",                                        mode = "i" },
+    { from = "<c-k>",       to = "<Up>",                                          mode = "i" },
+    { from = "<c-l>",       to = "<Right>",                                       mode = "i" },
     { from = "<leader>q",   to = "<cmd> q <cr>" },
     { from = "<leader>ww",  to = "<cmd> w <cr>" },
     { from = "<leader>wq",  to = "<cmd> wq <cr>" },
@@ -23,9 +23,9 @@ local keymap = {
     { from = "<leader>lds", to = "<cmd>Telescope lsp_document_symbols<cr>" },
 
     -- telescope git
-    { from = "<leader>gc",  to = "<cmd>Telescope git_commits<cr>" }, -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+    { from = "<leader>gc",  to = "<cmd>Telescope git_commits<cr>" },  -- list all git commits (use <cr> to checkout) ["gc" for git commits]
     { from = "<leader>gb",  to = "<cmd>Telescope git_branches<cr>" }, -- list git branches (use <cr> to checkout) ["gb" for git branch]
-    { from = "<leader>gs",  to = "<cmd>Telescope git_status<cr>" }, -- list current changes per file with diff preview ["gs" for git status]
+    { from = "<leader>gs",  to = "<cmd>Telescope git_status<cr>" },   -- list current changes per file with diff preview ["gs" for git status]
 
     --buffer line
     { from = "H",           to = "<cmd> bprevious <cr>" },

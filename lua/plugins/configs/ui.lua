@@ -1,7 +1,7 @@
 local M = {}
 
 M.lualine = {
-    theme = "everforest"
+    theme = "gruvbox"
 }
 
 M.bufferline = {
@@ -17,6 +17,17 @@ M.bufferline = {
         },
         always_show_bufferline = false
     },
+}
+
+M.transparent = {
+    extra_groups = {
+        "NvimTreeNormal",
+        "BufferLineTabClose",
+        "BufferLineFill",
+        "BufferLineBackground",
+        "BufferLineSeparator",
+        "BufferLineIndicatorSelected",
+    }
 }
 
 return M

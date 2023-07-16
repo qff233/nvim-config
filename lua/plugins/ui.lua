@@ -15,4 +15,11 @@ return {
             return require("plugins.configs.ui").bufferline
         end,
     },
+
+    {
+        "xiyaowong/transparent.nvim",
+        opts = function ()
+            return require("plugins.configs.ui").transparent
+        end
+    }
 }
