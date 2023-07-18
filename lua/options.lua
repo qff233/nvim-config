@@ -28,3 +28,12 @@ for key, value in pairs(opt) do
         vim.opt[key] = value
     end
 end
+
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+    pattern = { "*" },
+    callback = function()
+        vim.highlight.on_yank({
+            timeout = 300,
+        })
+    end
+})
