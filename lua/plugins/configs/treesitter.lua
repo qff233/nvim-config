@@ -1,24 +1,25 @@
-local options = {
-    ensure_installed = {
-        "help",
-        "bash",
-        "rust",
-        "cpp",
-        "c",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "typescript",
-        "yaml",
-    },
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
+local M = {
+	ensure_installed = {
+		"bash",
+		"rust",
+		"cpp",
+		"c",
+		"html",
+		"javascript",
+		"json",
+		"lua",
+		"markdown",
+		"markdown_inline",
+		"python",
+		"typescript",
+		"yaml",
+	},
+	sync_install = false,
+	auto_install = true,
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	},
 }
 
-return options
+return M

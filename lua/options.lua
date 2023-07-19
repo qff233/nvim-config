@@ -6,7 +6,7 @@ local opt = {
 	expandtab = true,
 	autoindent = true,
 
-	scrolloff = 15,
+	scrolloff = 10,
 	cursorline = true,
 	wrap = false,
 	clipboard = function(clip)
@@ -21,6 +21,10 @@ local opt = {
 
 	termguicolors = true,
 	signcolumn = "yes",
+
+	foldmethod = "expr",
+	foldexpr = "nvim_treesitter#foldexpr()",
+	foldenable = false,
 }
 
 for key, value in pairs(opt) do
@@ -31,13 +35,6 @@ for key, value in pairs(opt) do
 	end
 end
 
--- 自动保存
-vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
-	pattern = { "*" },
-	command = "silent! wall",
-	nested = true,
-})
-
 -- 重新打开恢复光标位置
 vim.api.nvim_create_autocmd("BufReadPost", {
 	pattern = "*",
@@ -47,15 +44,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 			vim.cmd("silent! foldopen")
 		end
 	end,
-})
-
--- 打开C、C++文件自动设置折叠
-vim.api.nvim_create_autocmd("BufReadPost", {
-	pattern = { "*.c", "*.cpp" },
-    callback = function()
-        vim.cmd("setlocal foldmethod=syntax")
-        vim.cmd("set nofoldenable")
-    end
 })
 
 -- 复制高亮
