@@ -49,10 +49,13 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
--- 打开C、C++文件自动折叠
+-- 打开C、C++文件自动设置折叠
 vim.api.nvim_create_autocmd("BufReadPost", {
 	pattern = { "*.c", "*.cpp" },
-	command = "setlocal foldmethod=syntax",
+    callback = function()
+        vim.cmd("setlocal foldmethod=syntax")
+        vim.cmd("set nofoldenable")
+    end
 })
 
 -- 复制高亮
