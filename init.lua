@@ -18,3 +18,8 @@ require("lazy").setup("plugins")
 vim.g.everforest_diagnostic_line_highlight = 1
 vim.cmd("colorscheme gruvbox")
 vim.g.background = "dark"
+
+if vim.g.neovide then
+    require("neovide")
+end
+

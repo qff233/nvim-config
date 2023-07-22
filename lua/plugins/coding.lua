@@ -4,7 +4,7 @@ return {
     {
         "williamboman/mason.nvim",
         opts = function()
-            return require("plugins.configs.mason")
+            return require("configs.mason")
         end,
     },
 
@@ -17,14 +17,14 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
-            require("plugins.configs.lspconfig")
+            require("configs.lspconfig")
         end,
     },
 
     {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-            require("plugins.configs.null-ls")
+            require("configs.null-ls")
         end,
     },
 
@@ -38,7 +38,7 @@ return {
                 dependencies = "rafamadriz/friendly-snippets",
                 opts = { history = true, updateevents = "TextChanged,TextChangedI" },
                 config = function(_, opts)
-                    require("plugins.configs.others").luasnip(opts)
+                    require("configs.others").luasnip(opts)
                 end,
             },
 
@@ -70,7 +70,7 @@ return {
         },
         opts = function()
             ---@diagnostic disable-next-line: different-requires
-            return require("plugins.configs.cmp")
+            return require("configs.cmp")
         end,
     },
 
