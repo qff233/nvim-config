@@ -2,10 +2,10 @@ local M = {}
 
 vim.g.mapleader = " "
 local keymap = {
-    { from = "<c-h>",       to = "<Left>",                                        mode = "i" },
-    { from = "<c-j>",       to = "<Down>",                                        mode = "i" },
-    { from = "<c-k>",       to = "<Up>",                                          mode = "i" },
-    { from = "<c-l>",       to = "<Right>",                                       mode = "i" },
+    { from = "<a-h>",       to = "<Left>",                                        mode = "i" },
+    { from = "<a-j>",       to = "<Down>",                                        mode = "i" },
+    { from = "<a-k>",       to = "<Up>",                                          mode = "i" },
+    { from = "<a-l>",       to = "<Right>",                                       mode = "i" },
     { from = "<leader>q",   to = "<cmd> q <cr>" },
     { from = "<leader>ww",  to = "<cmd> w <cr>" },
     { from = "<leader>wq",  to = "<cmd> wq <cr>" },
@@ -19,7 +19,6 @@ local keymap = {
     { from = "<leader>fs",  to = "<cmd>Telescope live_grep<cr>" },
     { from = "<leader>fc",  to = "<cmd>Telescope grep_string<cr>" },
     { from = "<leader>fb",  to = "<cmd>Telescope buffers<cr>" },
-    { from = "<leader>fh",  to = "<cmd>Telescope help_tags<cr>" },
     { from = "<leader>lds", to = "<cmd>Telescope lsp_document_symbols<cr>" },
 
     -- telescope git
