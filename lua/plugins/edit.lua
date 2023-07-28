@@ -1,5 +1,14 @@
 return {
     {
+        "tversteeg/registers.nvim",
+        opts = {},
+        keys = {
+            { "\"",    mode = { "n", "v" } },
+            { "<C-R>", mode = "i" }
+        },
+        cmd = "Registers",
+    },
+    {
         "lukas-reineke/indent-blankline.nvim",
         opts = function()
             return require("configs.others").indent_blankline
