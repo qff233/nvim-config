@@ -22,9 +22,9 @@ return {
     },
 
     {
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimdev/guard.nvim",
         config = function()
-            require("configs.null-ls")
+            require("configs.guard")
         end,
     },
 
