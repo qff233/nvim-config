@@ -18,7 +18,7 @@ require("lazy").setup({
             "LazyVim/LazyVim",
             import = "lazyvim.plugins",
             opts = {
-                colorscheme = "solarized-osaka",
+                colorscheme = "everforest",
             },
         },
         { import = "lazyvim.plugins.extras.linting.eslint" },
