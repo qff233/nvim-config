@@ -27,19 +27,4 @@ M.luasnip = function(opts)
     })
 end
 
-M.gitsigns = {
-    signs = {
-        add = { text = "+" },
-        change = { text = "~" },
-        delete = { text = "󰍵" },
-        topdelete = { text = "‾" },
-        changedelete = { text = "~" },
-        untracked = { text = "│" },
-    },
-}
-
-M.indent_blankline = {
-    show_current_context = true,
-}
-
 return M

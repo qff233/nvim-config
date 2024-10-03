@@ -1,25 +1,48 @@
 return {
-    "stevearc/dressing.nvim",
-    "nvim-tree/nvim-web-devicons",
-
     {
         "nvim-lualine/lualine.nvim",
         opts = function()
-            return require("configs.ui").lualine
+            return {
+                theme = "gruvbox"
+            }
         end,
     },
 
     {
         "akinsho/bufferline.nvim",
-        opts = function()
-            return require("configs.ui").bufferline
-        end,
+        opts = {
+            options = {
+                mode = "tabs",
+                diagnostics = "nvim_lsp",
+                offsets = {
+                    {
+                        filetype = "NvimTree",
+                        text = "File Explorer",
+                        highlight = "Directory",
+                        separator = true
+                    }
+                },
+                always_show_bufferline = false,
+                show_buffer_close_icons = false,
+                show_close_icon = false,
+            },
+        }
+        ,
     },
 
     {
         "xiyaowong/transparent.nvim",
-        opts = function ()
-            return require("configs.ui").transparent
+        opts = function()
+            return {
+                extra_groups = {
+                    "NvimTreeNormal",
+                    "BufferLineTabClose",
+                    "BufferLineFill",
+                    "BufferLineBackground",
+                    "BufferLineSeparator",
+                    "BufferLineIndicatorSelected",
+                }
+            }
         end
     }
 }

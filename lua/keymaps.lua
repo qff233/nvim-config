@@ -2,10 +2,6 @@ local M = {}
 
 vim.g.mapleader = " "
 local keymap = {
-    { from = "<a-h>",       to = "<Left>",                                        mode = "i" },
-    { from = "<a-j>",       to = "<Down>",                                        mode = "i" },
-    { from = "<a-k>",       to = "<Up>",                                          mode = "i" },
-    { from = "<a-l>",       to = "<Right>",                                       mode = "i" },
     { from = "<leader>q",   to = "<cmd> q <cr>" },
     { from = "<leader>ww",  to = "<cmd> w <cr>" },
     { from = "<leader>wq",  to = "<cmd> wq <cr>" },
@@ -27,9 +23,10 @@ local keymap = {
     { from = "<leader>gs",  to = "<cmd>Telescope git_status<cr>" },   -- list current changes per file with diff preview ["gs" for git status]
 
     --buffer line
-    { from = "H",           to = "<cmd> bprevious <cr>" },
-    { from = "L",           to = "<cmd> bnext<cr>" },
-    { from = "X",           to = "<cmd> bdel <cr> <cmd> bnext <cr>" },
+    { from = "te",          to = "<cmd> :tabedit <cr>" },
+    { from = "<tab>",       to = "<cmd> :tabnext <cr>" },
+    { from = "<s-tab>",     to = "<cmd> :tabprev <cr>" },
+    { from = "td",          to = "<cmd> bdel <cr>" },
 }
 
 M.lsp_keymaps = {
@@ -45,7 +42,6 @@ M.lsp_keymaps = {
     { from = "[d",         to = "<cmd>Lspsaga diagnostic_jump_prev<cr>" },
     { from = "]d",         to = "<cmd>Lspsaga diagnostic_jump_next<cr>" },
 }
-
 
 for i = 1, #keymap do
     local config = keymap[i]
