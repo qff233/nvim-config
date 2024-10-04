@@ -2,6 +2,7 @@ require("options")
 require("keymaps")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+---@diagnostic disable-next-line: undefined-field
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
         "git",
@@ -15,9 +16,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
-vim.g.everforest_diagnostic_line_highlight = 1
-vim.cmd("colorscheme gruvbox")
-vim.g.background = "dark"
+-- vim.g.everforest_diagnostic_line_highlight = 1
+-- vim.g.background = "dark"
+vim.cmd("colorscheme everforest")
 
 if vim.g.neovide then
     require("neovide")

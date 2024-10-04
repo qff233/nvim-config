@@ -1,32 +1,38 @@
 local M = {}
 
 vim.g.mapleader = " "
-local keymap = {
-    { from = "<leader>q",   to = "<cmd> q <cr>" },
-    { from = "<leader>ww",  to = "<cmd> w <cr>" },
-    { from = "<leader>wq",  to = "<cmd> wq <cr>" },
-    { from = "<Esc>",       to = "<cmd> noh <cr>" },
+M.nvim_tree = {
+    { "<leader>e",   "<cmd> NvimTreeToggle <cr>" },
+}
 
-    { from = "<leader>e",   to = "<cmd> NvimTreeToggle <cr>" },
-    { from = "<leader>xx",  to = "<cmd> TroubleToggle workspace_diagnostics <cr>" },
+M.trouble = {
+    { "<leader>xx",  "<cmd> TroubleToggle workspace_diagnostics <cr>" },
+}
+
+local keymap = {
+    { "<leader>q",   "<cmd> q <cr>" },
+    { "<leader>ww",  "<cmd> w <cr>" },
+    { "<leader>wq",  "<cmd> wq <cr>" },
+    { "<Esc>",       "<cmd> noh <cr>" },
+
 
     -- telescope
-    { from = "<leader>ff",  to = "<cmd>Telescope find_files<cr>" },
-    { from = "<leader>fs",  to = "<cmd>Telescope live_grep<cr>" },
-    { from = "<leader>fc",  to = "<cmd>Telescope grep_string<cr>" },
-    { from = "<leader>fb",  to = "<cmd>Telescope buffers<cr>" },
-    { from = "<leader>lds", to = "<cmd>Telescope lsp_document_symbols<cr>" },
+    { "<leader>ff",  "<cmd>Telescope find_files<cr>" },
+    { "<leader>fs",  "<cmd>Telescope live_grep<cr>" },
+    { "<leader>fc",  "<cmd>Telescope grep_string<cr>" },
+    { "<leader>fb",  "<cmd>Telescope buffers<cr>" },
+    { "<leader>lds", "<cmd>Telescope lsp_document_symbols<cr>" },
 
     -- telescope git
-    { from = "<leader>gc",  to = "<cmd>Telescope git_commits<cr>" },  -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-    { from = "<leader>gb",  to = "<cmd>Telescope git_branches<cr>" }, -- list git branches (use <cr> to checkout) ["gb" for git branch]
-    { from = "<leader>gs",  to = "<cmd>Telescope git_status<cr>" },   -- list current changes per file with diff preview ["gs" for git status]
+    { "<leader>gc",  "<cmd>Telescope git_commits<cr>" },  -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+    { "<leader>gb",  "<cmd>Telescope git_branches<cr>" }, -- list git branches (use <cr> to checkout) ["gb" for git branch]
+    { "<leader>gs",  "<cmd>Telescope git_status<cr>" },   -- list current changes per file with diff preview ["gs" for git status]
 
     --buffer line
-    { from = "te",          to = "<cmd> :tabedit <cr>" },
-    { from = "<tab>",       to = "<cmd> :tabnext <cr>" },
-    { from = "<s-tab>",     to = "<cmd> :tabprev <cr>" },
-    { from = "td",          to = "<cmd> bdel <cr>" },
+    { "te",          "<cmd> :tabedit <cr>" },
+    { "<tab>",       "<cmd> :tabnext <cr>" },
+    { "<s-tab>",     "<cmd> :tabprev <cr>" },
+    { "td",          "<cmd> bdel <cr>" },
 }
 
 M.lsp_keymaps = {
@@ -45,7 +51,7 @@ M.lsp_keymaps = {
 
 for i = 1, #keymap do
     local config = keymap[i]
-    vim.keymap.set(config.mode or "n", config.from, config.to)
+    vim.keymap.set(config.mode or "n", config[1], config[2])
 end
 
 return M

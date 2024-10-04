@@ -1,8 +1,7 @@
+local keymaps = require("keymaps")
+
 return {
     {
-
-
-
         "tversteeg/registers.nvim",
         opts = {},
         keys = {
@@ -106,6 +105,7 @@ return {
                 },
             }
         end,
+        keys = keymaps.nvim_tree,
         config = function(_, opts)
             require("nvim-tree").setup(opts)
             vim.g.nvimtree_side = opts.view.side

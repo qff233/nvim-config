@@ -3,7 +3,7 @@ return {
         "nvim-lualine/lualine.nvim",
         opts = function()
             return {
-                theme = "gruvbox"
+                theme = "everforest"
             }
         end,
     },
@@ -29,20 +29,4 @@ return {
         }
         ,
     },
-
-    {
-        "xiyaowong/transparent.nvim",
-        opts = function()
-            return {
-                extra_groups = {
-                    "NvimTreeNormal",
-                    "BufferLineTabClose",
-                    "BufferLineFill",
-                    "BufferLineBackground",
-                    "BufferLineSeparator",
-                    "BufferLineIndicatorSelected",
-                }
-            }
-        end
-    }
 }
