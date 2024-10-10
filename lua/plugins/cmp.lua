@@ -30,7 +30,7 @@ return {
             require("luasnip.loaders.from_vscode").lazy_load()
             local cmp = require("cmp")
             local luasnip = require("luasnip")
-            local lspkind = require("lspkind")
+            -- local lspkind = require("lspkind")
             return {
                 snippet = {
                     expand = function(args)
