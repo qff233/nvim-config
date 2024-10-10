@@ -27,7 +27,7 @@ return {
                 local opts = { noremap = false, buffer = bufnr }
                 local keymap = require("keymaps").lsp_keymaps
                 for i = 1, #keymap do
-                    vim.keymap.set("n", keymap[i].from, keymap[i].to, opts)
+                    vim.keymap.set("n", keymap[i][1], keymap[i][2], opts)
                 end
                 vim.api.nvim_create_autocmd("BufWritePre", {
                     group = vim.api.nvim_create_augroup("LspFormatting", { clear = true }),

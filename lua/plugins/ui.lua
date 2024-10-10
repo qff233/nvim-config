@@ -40,11 +40,7 @@ return {
         "RRethy/vim-illuminate",
         event = { "BufReadPost", "BufNewFile" },
         opts = {
-            delay = 200,
-            large_file_cutoff = 2000,
-            large_file_overrides = {
-                providers = { "lsp" },
-            },
+            providers = { "lsp" },
         },
         config = function(_, opts)
             require("illuminate").configure(opts)
@@ -133,6 +129,22 @@ return {
         config = function(_, opts)
             require("nvim-tree").setup(opts)
             vim.g.nvimtree_side = opts.view.side
+        end,
+    },
+
+    {
+        "lewis6991/gitsigns.nvim",
+        opts = function()
+            return {
+                signs = {
+                    add = { text = "+" },
+                    change = { text = "~" },
+                    delete = { text = "󰍵" },
+                    topdelete = { text = "‾" },
+                    changedelete = { text = "~" },
+                    untracked = { text = "│" },
+                },
+            }
         end,
     },
 }

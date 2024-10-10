@@ -1,12 +1,28 @@
 local M = {}
 
 vim.g.mapleader = " "
+
 M.nvim_tree = {
     { "<leader>e", "<cmd> NvimTreeToggle <cr>" },
 }
 
-M.trouble = {
-    { "<leader>xx", "<cmd> TroubleToggle workspace_diagnostics <cr>" },
+-- M.trouble = {
+--     { "<leader>xx", "<cmd> TroubleToggle workspace_diagnostics <cr>" },
+-- }
+
+M.lsp_keymaps = {
+    { "gD",         vim.lsp.buf.declaration },
+    { "gd",         "<cmd>Telescope lsp_definitions<cr>" },
+    { "K",          "<cmd>Lspsaga hover_doc<cr>" },
+    { "gi",         vim.lsp.buf.implementation },
+    { "<C-k>",      vim.lsp.buf.signature_help },
+    { "<leader>D",  "<cmd>Telescope diagnostics<cr>" },
+    { "<leader>rn", "<cmd>Lspsaga rename ++project<cr>" },
+    { "<leader>ca", "<cmd>Lspsaga code_action<cr>" },
+    { "gr",         "<cmd>Telescope lsp_references<cr>" },
+    { "[d",         "<cmd>Lspsaga diagnostic_jump_prev<cr>" },
+    { "]d",         "<cmd>Lspsaga diagnostic_jump_next<cr>" },
+    { "<leader>cf", vim.lsp.buf.format }
 }
 
 local keymap = {
@@ -31,21 +47,6 @@ local keymap = {
     { "<tab>",           "<cmd> :tabnext <cr>" },
     { "<s-tab>",         "<cmd> :tabprev <cr>" },
     { "td",              "<cmd> bdel <cr>" },
-}
-
-M.lsp_keymaps = {
-    { from = "gD",         to = vim.lsp.buf.declaration },
-    { from = "gd",         to = "<cmd>Telescope lsp_definitions<cr>" },
-    { from = "K",          to = "<cmd>Lspsaga hover_doc<cr>" },
-    { from = "gi",         to = vim.lsp.buf.implementation },
-    { from = "<C-k>",      to = vim.lsp.buf.signature_help },
-    { from = "<leader>D",  to = "<cmd>Telescope diagnostics<cr>" },
-    { from = "<leader>rn", to = "<cmd>Lspsaga rename ++project<cr>" },
-    { from = "<leader>ca", to = "<cmd>Lspsaga code_action<cr>" },
-    { from = "gr",         to = "<cmd>Telescope lsp_references<cr>" },
-    { from = "[d",         to = "<cmd>Lspsaga diagnostic_jump_prev<cr>" },
-    { from = "]d",         to = "<cmd>Lspsaga diagnostic_jump_next<cr>" },
-    { from = "<space>f",   to = vim.lsp.buf.format }
 }
 
 for i = 1, #keymap do
