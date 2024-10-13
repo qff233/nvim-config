@@ -5,12 +5,11 @@ return {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
             "folke/neoconf.nvim",
-            "folke/neodev.nvim",
+            "folke/lazydev.nvim",
             "glepnir/lspsaga.nvim",
         },
         config = function()
             require("neoconf").setup()
-            require("neodev").setup()
             require("lspsaga").setup()
             require("mason").setup {
                 ui = {

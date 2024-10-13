@@ -15,7 +15,9 @@ if not vim.loop.fs_stat(lazypath) then
         lazypath,
     })
 end
+
 vim.opt.rtp:prepend(lazypath)
+
 require("lazy").setup("plugins")
 
 -- vim.g.everforest_diagnostic_line_highlight = 1
