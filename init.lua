@@ -1,3 +1,6 @@
+---@diagnostic disable-next-line: lowercase-global
+vim = vim or {}
+
 vim.loader.enable()
 
 require("options")

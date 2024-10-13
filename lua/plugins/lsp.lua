@@ -9,7 +9,7 @@ return {
             "glepnir/lspsaga.nvim",
         },
         config = function()
-            require("neoconf").setup()
+            -- require("neoconf").setup()
             require("lspsaga").setup()
             require("mason").setup {
                 ui = {
