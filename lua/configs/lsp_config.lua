@@ -1,23 +1,3 @@
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities.textDocument.completion.completionItem = {
---     documentationFormat = { "markdown", "plaintext" },
---     snippetSupport = true,
---     preselectSupport = true,
---     insertReplaceSupport = true,
---     labelDetailsSupport = true,
---     deprecatedSupport = true,
---     commitCharactersSupport = true,
---     tagSupport = { valueSet = { 1 } },
---     resolveSupport = {
---         properties = {
---             "documentation",
---             "detail",
---             "additionalTextEdits",
---         },
---     },
--- }
-
--- vim.fn.sign_define({
 --     {
 --         name = "DiagnosticSignError",
 --         text = "E",
@@ -52,7 +32,9 @@ return {
                 completion = {
                     callSnippet = "Replace",
                 },
-                workspace = { checkThirdParty = false },
+                workspace = {
+                    checkThirdParty = false,
+                },
                 telemetry = { enable = false }
             },
         }

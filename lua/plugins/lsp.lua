@@ -1,6 +1,7 @@
 return {
     {
         "neovim/nvim-lspconfig",
+        -- commit = "8ab8f4cf48425dcb4845a61d3caa2d2a7e3d9df7",
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
@@ -10,6 +11,7 @@ return {
         },
         config = function()
             -- require("neoconf").setup()
+            require("lazydev").setup()
             require("lspsaga").setup()
             require("mason").setup {
                 ui = {
@@ -40,6 +42,7 @@ return {
                 end
             end
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            -- local capabilities = vim.lsp.protocol.make_client_capabilities()
             local servers = require("configs/lsp_config")
             require("mason-lspconfig").setup {
                 ensure_installed = vim.tbl_keys(servers),
@@ -56,7 +59,7 @@ return {
             end
         end,
     },
-
+    --
     -- {
     -- 	"folke/trouble.nvim",
     -- 	dependencies = { "nvim-tree/nvim-web-devicons" },
