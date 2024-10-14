@@ -26,44 +26,57 @@
 
 local util = require("lspconfig.util")
 return {
-    lua_ls = {
-        settings = {
-            Lua = {
-                completion = {
-                    callSnippet = "Replace",
-                },
-                workspace = {
-                    checkThirdParty = false,
-                },
-                telemetry = { enable = false }
-            },
-        }
-    },
+	lua_ls = {
+		settings = {
+			Lua = {
+				workspace = {
+					checkThirdParty = false,
+				},
+				codeLens = {
+					enable = true,
+				},
+				completion = {
+					callSnippet = "Replace",
+				},
+				doc = {
+					privateName = { "^_" },
+				},
+				hint = {
+					enable = true,
+					setType = false,
+					paramType = true,
+					paramName = "Disable",
+					semicolon = "Disable",
+					arrayIndex = "Disable",
+				},
+			},
+		},
+	},
 
-    rust_analyzer = {
-        filetype = { "rust" },
-        root_dir = util.root_pattern("Cargo.toml"),
-        settings = {
-            ["rust_analyzer"] = {
-                checkOnSave = {
-                    command = "clippy",
-                },
-                cargo = {
-                    allFeatures = true,
-                },
-            },
-        },
-    },
+	rust_analyzer = {
+		filetype = { "rust" },
+		root_dir = util.root_pattern("Cargo.toml"),
+		settings = {
+			["rust_analyzer"] = {
+				checkOnSave = {
+					command = "clippy",
+				},
+				cargo = {
+					allFeatures = true,
+				},
+			},
+		},
+	},
 
-    jsonls = {
-        settings = {
-            json = {
-                format = {
-                    enable = true
-                }
-            }
-        }
-    },
-    pyright = {},
-    clangd = {},
+	jsonls = {
+		settings = {
+			json = {
+				format = {
+					enable = true,
+				},
+			},
+		},
+	},
+	pyright = {},
+	clangd = {},
 }
