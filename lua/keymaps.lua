@@ -25,6 +25,42 @@ M.lsp_keymaps = {
     { "<leader>cf", vim.lsp.buf.format }
 }
 
+M.cmp_keymaps = {
+    -- ["<Tab>"] = function(fallback)
+    --     if cmp.visible() then
+    --         cmp.select_next_item()
+    --     elseif luasnip.expand_or_jumpable() then
+    --         luasnip.expand_or_jump()
+    --     elseif has_words_before() then
+    --         cmp.complete()
+    --     else
+    --         fallback()
+    --     end
+    -- end,
+    -- ["<S-Tab>"] = function(fallback)
+    --     if cmp.visible() then
+    --         cmp.select_prev_item()
+    --     elseif luasnip.jumpable(-1) then
+    --         luasnip.jump(-1)
+    --     else
+    --         fallback()
+    --     end
+    -- end,
+    -- ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+    -- ["<C-d>"] = cmp.mapping.scroll_docs(4),
+    -- ["<C-Space>"] = cmp.mapping.complete(),
+    -- ["<C-e>"] = cmp.mapping.abort(),
+    -- ["<CR>"] = cmp.mapping.confirm({ select = false }),
+    -- ["<S-CR>"] = cmp.mapping.confirm({
+    --     behavior = cmp.ConfirmBehavior.Replace,
+    --     select = false,
+    -- }),
+    -- ["<C-CR>"] = function(fallback)
+    --     cmp.abort()
+    --     fallback()
+    -- end,
+}
+
 local keymap = {
     { "<leader>q",       "<cmd> q <cr>" },
     { "<leader>ww",      "<cmd> w <cr>" },

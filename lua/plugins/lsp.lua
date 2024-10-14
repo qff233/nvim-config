@@ -39,7 +39,7 @@ return {
                     require("nvim-navic").attach(client, bufnr)
                 end
             end
-
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
             local servers = require("configs/lsp_config")
             require("mason-lspconfig").setup {
                 ensure_installed = vim.tbl_keys(servers),
@@ -47,7 +47,9 @@ return {
             for server, config in pairs(servers) do
                 require("lspconfig")[server].setup(
                     vim.tbl_deep_extend("keep", {
-                            on_attach = on_attach },
+                            on_attach = on_attach,
+                            capabilities = capabilities,
+                        },
                         config
                     )
                 )
