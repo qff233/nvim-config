@@ -29,8 +29,18 @@ return {
 	lua_ls = {
 		settings = {
 			Lua = {
+				-- runtime = {
+				-- 	path = { "?.lua", "?/init.lua" },
+				-- 	pathStrict = true,
+				-- 	version = "LuaJIT",
+				-- },
 				workspace = {
 					checkThirdParty = false,
+					-- library = {
+					-- 	vim.env.VIMRUNTIME .. "/lua",
+					-- 	vim.env.HOME .. "/.config/nvim/lua",
+					-- 	vim.env.HOME .. "/.local/share/nvim/lazy",
+					-- },
 				},
 				codeLens = {
 					enable = true,

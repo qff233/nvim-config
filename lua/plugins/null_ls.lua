@@ -3,20 +3,16 @@ return {
         "nvimtools/none-ls.nvim",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = { "jay-babu/mason-null-ls.nvim" },
-        config = function()
-            local tools = {
-                "black"
-            }
-            require("mason-null-ls").setup {
-                ensure_installed = tools,
-                handlers = {}
-            }
-
+        opts = function(_, opts)
             local nls = require("null-ls")
-            nls.setup {
-                -- root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
-                sources = {},
-            }
+            opts.root_dir = opts.root_dir
+                or require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git")
+            opts.sources = vim.list_extend(opts.sources or {}, {
+                nls.builtins.formatting.fish_indent,
+                nls.builtins.diagnostics.fish,
+                nls.builtins.formatting.stylua,
+                nls.builtins.formatting.shfmt,
+            })
         end,
     },
 }
