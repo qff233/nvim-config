@@ -53,6 +53,7 @@ return {
 					capabilities = capabilities,
 				}, config))
 			end
+			vim.lsp.inlay_hint.enable(true)
 		end,
 	},
 	--

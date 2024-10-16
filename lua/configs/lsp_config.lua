@@ -68,11 +68,22 @@ return {
 		root_dir = util.root_pattern("Cargo.toml"),
 		settings = {
 			["rust_analyzer"] = {
-				checkOnSave = {
-					command = "clippy",
+				imports = {
+					granularity = {
+						group = "module",
+					},
+					prefix = "self",
 				},
 				cargo = {
-					allFeatures = true,
+					buildScripts = {
+						enable = true,
+					},
+				},
+				procMacro = {
+					enable = true,
+				},
+				checkOnSave = {
+					command = "clippy",
 				},
 			},
 		},
