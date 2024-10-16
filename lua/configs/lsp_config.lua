@@ -100,4 +100,5 @@ return {
 	},
 	pyright = {},
 	clangd = {},
+	volar = {},
 }
