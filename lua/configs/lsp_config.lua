@@ -105,6 +105,8 @@ return {
 			"vue",
 		},
 	},
+	html = {},
+	cssls = {},
 	jsonls = {
 		settings = {
 			json = {

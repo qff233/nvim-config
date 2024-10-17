@@ -9,6 +9,7 @@ return {
 				"c",
 				"html",
 				"css",
+				"vue",
 				"javascript",
 				"json",
 				"lua",
