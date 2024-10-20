@@ -21,6 +21,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 vim.g.background = "dark"
+vim.cmd("let g:gruvbox_transparent_bg = 1")
+vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
 vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme everforest")
 -- vim.g.everforest_diagnostic_line_highlight = 1
