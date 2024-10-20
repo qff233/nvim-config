@@ -20,9 +20,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
+vim.g.background = "dark"
+vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme everforest")
 -- vim.g.everforest_diagnostic_line_highlight = 1
--- vim.g.background = "dark"
-vim.cmd("colorscheme everforest")
 
 if vim.g.neovide then
 	require("neovide")
