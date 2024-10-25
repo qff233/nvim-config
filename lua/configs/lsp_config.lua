@@ -118,4 +118,6 @@ return {
 	},
 	pyright = {},
 	clangd = {},
+	taplo = {},
+	sqlls = {},
 }
