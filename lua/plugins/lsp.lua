@@ -30,13 +30,13 @@ return {
 				for i = 1, #keymap do
 					vim.keymap.set("n", keymap[i][1], keymap[i][2], opts)
 				end
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					group = vim.api.nvim_create_augroup("LspFormatting", { clear = true }),
-					buffer = bufnr,
-					callback = function()
-						vim.lsp.buf.format()
-					end,
-				})
+				-- vim.api.nvim_create_autocmd("BufWritePre", {
+				-- 	group = vim.api.nvim_create_augroup("LspFormatting", { clear = true }),
+				-- 	buffer = bufnr,
+				-- 	callback = function()
+				-- 		vim.lsp.buf.format()
+				-- 	end,
+				-- })
 				if client.server_capabilities.documentSymbolProvider then
 					require("nvim-navic").attach(client, bufnr)
 				end
