@@ -79,10 +79,8 @@ local keymap = {
 	{ "<leader>gs", "<cmd>Telescope git_status<cr>" }, -- list current changes per file with diff preview ["gs" for git status]
 
 	--buffer line
-	{ "te", "<cmd> :tabedit <cr>" },
-	{ "<tab>", "<cmd> :tabnext <cr>" },
-	{ "<s-tab>", "<cmd> :tabprev <cr>" },
-	{ "td", "<cmd> bdel <cr>" },
+	{ "<leader>te", "<cmd> :tabedit <cr>" },
+	{ "<ledaer>td", "<cmd> bdel <cr>" },
 }
 
 for i = 1, #keymap do
