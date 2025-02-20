@@ -41,7 +41,7 @@ return {
 					require("nvim-navic").attach(client, bufnr)
 				end
 			end
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			-- local capabilities = vim.lsp.protocol.make_client_capabilities()
 			local servers = require("configs/lsp_config")
 			require("mason-lspconfig").setup({
@@ -50,7 +50,8 @@ return {
 			for server, config in pairs(servers) do
 				require("lspconfig")[server].setup(vim.tbl_deep_extend("keep", {
 					on_attach = on_attach,
-					capabilities = capabilities,
+					-- capabilities = capabilities,
+                    capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
 				}, config))
 			end
 			vim.lsp.inlay_hint.enable(true)
