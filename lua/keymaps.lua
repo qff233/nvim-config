@@ -80,7 +80,7 @@ local keymap = {
 
 	--buffer line
 	{ "<leader>te", "<cmd> :tabedit <cr>" },
-	{ "<ledaer>td", "<cmd> bdel <cr>" },
+	{ "<ledaer>td", "<cmd> :bdel <cr>" },
 }
 
 for i = 1, #keymap do
