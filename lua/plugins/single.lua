@@ -3,6 +3,7 @@ return {
 	"christoomey/vim-tmux-navigator",
 	"stevearc/dressing.nvim",
 	"nvim-tree/nvim-web-devicons",
+    {'wakatime/vim-wakatime', lazy = false},
 	-- {
 	-- 	"neanias/everforest-nvim",
 	-- 	lazy = true,
